@@ -149,6 +149,10 @@ func (item *Item) DiscardEarlierVersions() bool {
 	return item.meta&bitDiscardEarlierVersions > 0
 }
 
+func (item *Item) IsMergeEntry() bool {
+	return item.meta&bitMergeEntry > 0
+}
+
 func (item *Item) yieldItemValue() ([]byte, func(), error) {
 	key := item.Key() // No need to copy.
 	if !item.hasValue() {
