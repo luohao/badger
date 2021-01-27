@@ -204,9 +204,9 @@ func (e *Entry) WithTTL(dur time.Duration) *Entry {
 	return e
 }
 
-// withMergeBit sets merge bit in entry's metadata. This
+// WithMergeBit sets merge bit in entry's metadata. This
 // function is called by MergeOperator's Add method.
-func (e *Entry) withMergeBit() *Entry {
+func (e *Entry) WithMergeBit() *Entry {
 	e.meta = bitMergeEntry
 	return e
 }
